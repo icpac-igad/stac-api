@@ -2,7 +2,7 @@
   "type": "Catalog",
   "id": "flood-ibf-catalog",
   "stac_version": "1.1.0",
-  "title": "Flood Impact-Based Forecasting Catalog",
+  "title": "FloodWatch Catalog",
   "description": "STAC Catalog for Flood Impact-Based Forecasting (E4DRR IBF) - IGAD/ICPAC Region",
   "links": [
     {
