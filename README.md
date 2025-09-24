@@ -69,7 +69,7 @@ The workflow validates all STAC collections and generates the correct STAC Brows
 https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json?.language=en
 ```
 
-**Status**: ✅ Working - Shows "FloodWatch Catalog" title and all 6 collections without errors
+
 
 **Other Branches:**
 Replace `flood-main` with your branch name in the URL pattern:
@@ -84,7 +84,7 @@ https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercon
 https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json
 ```
 
-**Status**: ✅ Working - Returns valid STAC catalog JSON
+
 
 ## Catalog Features
 
