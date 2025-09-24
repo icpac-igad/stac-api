@@ -69,11 +69,6 @@
       "rel": "self",
       "href": "./merged-alerts-collection.json",
       "type": "application/json"
-    },
-    {
-      "rel": "items",
-      "href": "./items/index.json",
-      "type": "application/json"
     }
   ]
 }
