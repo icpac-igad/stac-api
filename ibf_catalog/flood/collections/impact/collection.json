@@ -68,7 +68,7 @@
     },
     {
       "rel": "items",
-      "href": "./items",
+      "href": "./items/index.json",
       "type": "application/json"
     }
   ]

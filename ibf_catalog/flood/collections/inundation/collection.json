@@ -45,10 +45,9 @@
       "type": "application/json"
     },
     {
-      "rel": "item",
-      "href": "flood-inundation-item-20241017.json",
-      "type": "application/json",
-      "title": "Flood Inundation - October 17, 2024"
+      "rel": "items",
+      "href": "./items/index.json",
+      "type": "application/json"
     }
   ]
 }

@@ -1,0 +1,130 @@
+{
+  "type": "FeatureCollection",
+  "stac_version": "1.0.0",
+  "stac_extensions": [],
+  "context": {
+    "page": 1,
+    "limit": 10,
+    "matched": 1,
+    "returned": 1
+  },
+  "numberMatched": 1,
+  "numberReturned": 1,
+  "features": [
+    {
+      "stac_version": "1.0.0",
+      "type": "Feature",
+      "id": "flood-impacts-20250519",
+      "collection": "flood-impact-layers",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [21.0, -15.0],
+            [52.0, -15.0],
+            [52.0, 24.0],
+            [21.0, 24.0],
+            [21.0, -15.0]
+          ]
+        ]
+      },
+      "bbox": [21.0, -15.0, 52.0, 24.0],
+      "properties": {
+        "datetime": "2025-05-19T00:00:00Z",
+        "created": "2025-05-19T10:50:00Z",
+        "updated": "2025-05-19T10:50:00Z",
+        "title": "Flood Impact Assessment - May 19, 2025",
+        "description": "Daily flood impact assessment for built environment and cropland areas",
+        "impact_types": ["built_environment", "cropland"],
+        "geometry_type": "Polygon",
+        "data_format": "shapefile"
+      },
+      "assets": {
+        "built_impacts_shp": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-built.shp",
+          "type": "application/vnd.esri.shapefile",
+          "roles": ["data"],
+          "title": "Built Environment Impacts Shapefile",
+          "description": "Polygon shapefile showing flood impacts on built/urban areas"
+        },
+        "built_impacts_dbf": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-built.dbf",
+          "type": "application/x-dbf",
+          "roles": ["data"],
+          "title": "Built Environment Attributes"
+        },
+        "built_impacts_shx": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-built.shx",
+          "type": "application/octet-stream",
+          "roles": ["data"],
+          "title": "Built Environment Index"
+        },
+        "built_impacts_prj": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-built.prj",
+          "type": "text/plain",
+          "roles": ["metadata"],
+          "title": "Built Environment Projection"
+        },
+        "cropland_impacts_shp": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-cropland.shp",
+          "type": "application/vnd.esri.shapefile",
+          "roles": ["data"],
+          "title": "Cropland Impacts Shapefile",
+          "description": "Polygon shapefile showing flood impacts on agricultural areas"
+        },
+        "cropland_impacts_dbf": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-cropland.dbf",
+          "type": "application/x-dbf",
+          "roles": ["data"],
+          "title": "Cropland Attributes"
+        },
+        "cropland_impacts_shx": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-cropland.shx",
+          "type": "application/octet-stream",
+          "roles": ["data"],
+          "title": "Cropland Index"
+        },
+        "cropland_impacts_prj": {
+          "href": "../data/merged/2025/05/19/202505190000_FPimpacts-cropland.prj",
+          "type": "text/plain",
+          "roles": ["metadata"],
+          "title": "Cropland Projection"
+        }
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "../collection.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "root",
+          "href": "../../fl_catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "self",
+          "href": "./index.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../fl_catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./index.json",
+      "type": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "stac_version": "1.0.0",
+  "stac_extensions": [],
+  "context": {
+    "page": 1,
+    "limit": 10,
+    "matched": 1,
+    "returned": 1
+  },
+  "numberMatched": 1,
+  "numberReturned": 1,
+  "features": [
+    {
+      "stac_version": "1.0.0",
+      "type": "Feature",
+      "id": "flood-monitoring-sections",
+      "collection": "flood-monitoring-points",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [22.466099, -14.133585],
+            [50.920653, -14.133585],
+            [50.920653, 22.759505],
+            [22.466099, 22.759505],
+            [22.466099, -14.133585]
+          ]
+        ]
+      },
+      "bbox": [22.466099, -14.133585, 50.920653, 22.759505],
+      "properties": {
+        "datetime": "2025-07-18T00:00:00Z",
+        "created": "2025-07-18T00:00:00Z",
+        "updated": "2025-07-18T00:00:00Z",
+        "title": "Flood Monitoring Sections",
+        "description": "1,063 flood monitoring points across IGAD region with threshold data",
+        "feature_count": 1063,
+        "geometry_type": "Point",
+        "attributes": {
+          "SEC_CODE": "Section code identifier",
+          "SEC_NAME": "Section name",
+          "BASIN": "Basin name",
+          "TYPE": "Monitoring type",
+          "Q_THR1": "Flood threshold level 1",
+          "Q_THR2": "Flood threshold level 2",
+          "Q_THR3": "Flood threshold level 3",
+          "ADMIN_B_L1": "Admin boundary level 1",
+          "ADMIN_B_L2": "Admin boundary level 2",
+          "ADMIN_B_L3": "Admin boundary level 3",
+          "LAT": "Latitude coordinate",
+          "LON": "Longitude coordinate"
+        }
+      },
+      "assets": {
+        "shapefile": {
+          "href": "../data/static/fp_sections_igad.shp",
+          "type": "application/vnd.esri.shapefile",
+          "roles": ["data"],
+          "title": "Flood Monitoring Points Shapefile",
+          "description": "Shapefile containing 1,063 flood monitoring points with attributes"
+        },
+        "shapefile_dbf": {
+          "href": "../data/static/fp_sections_igad.dbf",
+          "type": "application/x-dbf",
+          "roles": ["data"],
+          "title": "Shapefile Attribute Table"
+        },
+        "shapefile_shx": {
+          "href": "../data/static/fp_sections_igad.shx",
+          "type": "application/octet-stream",
+          "roles": ["data"],
+          "title": "Shapefile Index"
+        },
+        "shapefile_prj": {
+          "href": "../data/static/fp_sections_igad.prj",
+          "type": "text/plain",
+          "roles": ["metadata"],
+          "title": "Shapefile Projection"
+        }
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "../collection.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "root",
+          "href": "../../fl_catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "self",
+          "href": "./index.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../fl_catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./index.json",
+      "type": "application/json"
+    }
+  ]
+}

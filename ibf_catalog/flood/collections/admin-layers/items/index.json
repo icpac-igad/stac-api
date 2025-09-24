@@ -1,0 +1,87 @@
+{
+  "type": "FeatureCollection",
+  "stac_version": "1.0.0",
+  "stac_extensions": [],
+  "context": {
+    "page": 1,
+    "limit": 10,
+    "matched": 1,
+    "returned": 1
+  },
+  "numberMatched": 1,
+  "numberReturned": 1,
+  "features": [
+    {
+      "stac_version": "1.0.0",
+      "type": "Feature",
+      "id": "admin1-boundaries",
+      "collection": "admin-boundaries",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [21.0, -15.0],
+            [52.0, -15.0],
+            [52.0, 24.0],
+            [21.0, 24.0],
+            [21.0, -15.0]
+          ]
+        ]
+      },
+      "bbox": [21.0, -15.0, 52.0, 24.0],
+      "properties": {
+        "datetime": "2024-01-01T00:00:00Z",
+        "created": "2024-09-08T00:00:00Z",
+        "updated": "2024-09-08T00:00:00Z",
+        "admin_level": 1,
+        "title": "Administrative Level 1 Boundaries",
+        "description": "State/Province level administrative boundaries for IGAD region countries",
+        "feature_count": "estimated_polygons"
+      },
+      "assets": {
+        "boundaries": {
+          "href": "../data/static/Admin1.geojson",
+          "type": "application/geo+json",
+          "roles": ["data"],
+          "title": "Admin Level 1 Boundaries",
+          "description": "GeoJSON file containing administrative level 1 boundaries (states/provinces)",
+          "file:size": 6001550
+        }
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "../collection.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "root",
+          "href": "../../fl_catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "self",
+          "href": "../admin1-boundaries-item.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../fl_catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./index.json",
+      "type": "application/json"
+    }
+  ]
+}

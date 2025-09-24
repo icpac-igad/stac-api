@@ -1,0 +1,113 @@
+{
+  "type": "FeatureCollection",
+  "stac_version": "1.0.0",
+  "stac_extensions": [],
+  "context": {
+    "page": 1,
+    "limit": 10,
+    "matched": 1,
+    "returned": 1
+  },
+  "numberMatched": 1,
+  "numberReturned": 1,
+  "features": [
+    {
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+      ],
+      "type": "Feature",
+      "id": "flood-inundation-20241017",
+      "collection": "flood-inundation-maps",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [21.7416786, -15.0082355],
+            [51.4416785, -15.0082355],
+            [51.4416785, 23.3667644],
+            [21.7416786, 23.3667644],
+            [21.7416786, -15.0082355]
+          ]
+        ]
+      },
+      "bbox": [21.7416786, -15.0082355, 51.4416785, 23.3667644],
+      "properties": {
+        "datetime": "2024-10-17T00:00:00Z",
+        "created": "2024-10-17T00:00:00Z",
+        "updated": "2024-10-17T00:00:00Z",
+        "platform": "model",
+        "instruments": ["hydrological-model"],
+        "gsd": 833.333,
+        "proj:epsg": 4326,
+        "proj:geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [21.7416786, -15.0082355],
+              [51.4416785, -15.0082355],
+              [51.4416785, 23.3667644],
+              [21.7416786, 23.3667644],
+              [21.7416786, -15.0082355]
+            ]
+          ]
+        },
+        "proj:bbox": [21.7416786, -15.0082355, 51.4416785, 23.3667644],
+        "proj:shape": [4605, 3564],
+        "proj:transform": [0.008333333300053, 0.0, 21.741678612777779, 0.0, 0.008333333300036, 23.3667644],
+        "raster:bands": [
+          {
+            "nodata": 0,
+            "data_type": "int16",
+            "description": "Flood inundation level with merged HMC alerts",
+            "unit": "inundation_index"
+          }
+        ]
+      },
+      "assets": {
+        "flood_inundation": {
+          "href": "../data/inundation_maps/2024/10/flood_inundation_20241017_0000.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": ["data"],
+          "title": "Flood Inundation Raster",
+          "description": "Daily flood inundation map with merged alerts for October 17, 2024"
+        }
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "../collection.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "root",
+          "href": "../../fl_catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "self",
+          "href": "./index.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../fl_catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./index.json",
+      "type": "application/json"
+    }
+  ]
+}
