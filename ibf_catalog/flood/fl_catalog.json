@@ -2,7 +2,8 @@
   "type": "Catalog",
   "id": "flood-ibf-catalog",
   "stac_version": "1.1.0",
-  "description": "STAC Catalog for Flood Impact-Based Forecasting (E4DRR IBF)",
+  "title": "Flood Impact-Based Forecasting Catalog",
+  "description": "STAC Catalog for Flood Impact-Based Forecasting (E4DRR IBF) - IGAD/ICPAC Region",
   "links": [
     {
       "rel": "self",
@@ -11,40 +12,39 @@
     },
     {
       "rel": "child",
+      "href": "collections/admin-layers/collection.json",
+      "type": "application/json",
+      "title": "Administrative Boundaries"
+    },
+    {
+      "rel": "child",
+      "href": "collections/inundation/collection.json",
+      "type": "application/json",
+      "title": "Flood Inundation Maps"
+    },
+    {
+      "rel": "child",
+      "href": "collections/hazards/collection.json",
+      "type": "application/json",
+      "title": "Flood Hazards"
+    },
+    {
+      "rel": "child",
+      "href": "collections/impact/collection.json",
+      "type": "application/json",
+      "title": "Flood Impact Layers"
+    },
+    {
+      "rel": "child",
+      "href": "collections/deterministic-forecasts/collection.json",
+      "type": "application/json",
+      "title": "Deterministic Forecasts"
+    },
+    {
+      "rel": "child",
       "href": "collections/observations/collection.json",
       "type": "application/json",
-      "title": "Observations"
-    },
-    {
-      "rel": "child",
-      "href": "collections/ensemble-predictions/collection.json",
-      "type": "application/json",
-      "title": "Ensemble Predictions"
-    },
-    {
-      "rel": "child",
-      "href": "collections/hazard-model/collection.json",
-      "type": "application/json",
-      "title": "Hazard Model"
-    },
-    {
-      "rel": "child",
-      "href": "collections/impact-model/collection.json",
-      "type": "application/json",
-      "title": "Impact Model"
-    },
-    {
-      "rel": "child",
-      "href": "collections/forecast-verification/collection.json",
-      "type": "application/json",
-      "title": "Forecast Verification"
-    },
-    {
-      "rel": "child",
-      "href": "collections/risk-knowledge/collection.json",
-      "type": "application/json",
-      "title": "Risk Knowledge"
+      "title": "Flood Observations"
     }
-  ],
-  "title": "Flood Impact-Based Forecasting Catalog"
+  ]
 }

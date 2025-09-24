@@ -1,0 +1,54 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "flood-inundation-maps",
+  "title": "IGAD-ICPAC Flood Inundation Maps",
+  "description": "Daily flood inundation maps for the IGAD region, integrated with merged alerts from daily HMC (Hydrological Monitoring Center) data. These maps show flood inundation areas with quantitative levels and are generated for disaster risk reduction and early warning purposes.",
+  "keywords": [
+    "flood",
+    "inundation",
+    "disaster risk reduction",
+    "early warning",
+    "IGAD",
+    "ICPAC",
+    "E4DRR"
+  ],
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "IGAD Climate Prediction and Applications Centre (ICPAC)",
+      "roles": ["producer", "processor"],
+      "url": "https://www.icpac.net"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [21.7416786, -15.0082355, 51.4416785, 23.3667644]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        ["2024-10-17T00:00:00Z", null]
+      ]
+    }
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../../fl_catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "flood-inundation-item-20241017.json",
+      "type": "application/json",
+      "title": "Flood Inundation - October 17, 2024"
+    }
+  ]
+}

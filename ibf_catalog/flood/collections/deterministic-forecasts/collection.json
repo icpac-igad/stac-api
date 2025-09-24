@@ -1,0 +1,73 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "deterministic-flood-forecasts",
+  "title": "IGAD Deterministic Flood Forecasts",
+  "description": "Daily deterministic hydrological forecasts for flood monitoring points across the IGAD region. Each forecast contains time series discharge data from multiple NWP models (GFS, ICON) with flood threshold information for early warning systems.",
+  "keywords": [
+    "flood forecasting",
+    "deterministic",
+    "hydrological modeling",
+    "discharge",
+    "early warning",
+    "time series",
+    "NWP",
+    "GFS",
+    "ICON",
+    "IGAD"
+  ],
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "IGAD Climate Prediction and Applications Centre (ICPAC)",
+      "roles": ["producer", "processor"],
+      "url": "https://www.icpac.net"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [23.0, -15.0, 52.0, 24.0]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        ["2024-10-17T00:00:00Z", null]
+      ]
+    }
+  },
+  "item_assets": {
+    "forecast_data": {
+      "type": "application/geo+json",
+      "roles": ["data"],
+      "title": "Deterministic Forecast Data",
+      "description": "Point features with time series discharge forecasts and threshold data"
+    }
+  },
+  "summaries": {
+    "datetime": ["2024-10-17T00:00:00Z/.."],
+    "forecast_models": ["nwp_gfs-det", "nwp_icon-det"],
+    "forecast_horizon_hours": [120, 48],
+    "domains": ["IGAD_D2", "IGAD_D5"],
+    "basins": ["Awash", "NileVictoriaLake", "NileVictoria", "NileAlbertLake"],
+    "forecast_variables": ["discharge"],
+    "temporal_resolution": ["hourly"]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "items",
+      "href": "./items",
+      "type": "application/json"
+    }
+  ]
+}

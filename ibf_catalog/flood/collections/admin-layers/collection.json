@@ -1,0 +1,64 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "admin-boundaries",
+  "title": "IGAD Administrative Boundaries",
+  "description": "Administrative boundary layers for the IGAD region including Level 1 (states/provinces) and Level 2 (districts/counties) administrative divisions. These boundaries support spatial analysis and disaster risk mapping.",
+  "keywords": [
+    "administrative boundaries",
+    "IGAD",
+    "vector",
+    "boundaries",
+    "governance",
+    "spatial reference"
+  ],
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "IGAD Climate Prediction and Applications Centre (ICPAC)",
+      "roles": ["producer"],
+      "url": "https://www.icpac.net"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [21.0, -15.0, 52.0, 24.0]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        ["2024-01-01T00:00:00Z", null]
+      ]
+    }
+  },
+  "item_assets": {
+    "boundaries": {
+      "type": "application/geo+json",
+      "roles": ["data"],
+      "title": "Administrative Boundaries",
+      "description": "Vector boundaries as GeoJSON"
+    }
+  },
+  "summaries": {
+    "datetime": ["2024-01-01T00:00:00Z/.."],
+    "admin_level": [1, 2]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "items",
+      "href": "./items",
+      "type": "application/json"
+    }
+  ]
+}

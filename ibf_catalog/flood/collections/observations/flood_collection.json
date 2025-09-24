@@ -1,0 +1,36 @@
+{
+  "type": "Collection",
+  "id": "flood-hazard-maps",
+  "title": "IGAD Flood Hazard Maps",
+  "description": "Daily flood hazard maps for the IGAD region",
+  "stac_version": "1.0.0",
+  "keywords": ["flood", "hazard", "IGAD", "East Africa"],
+  "providers": [
+    {
+      "name": "IGAD-ICPAC",
+      "roles": ["producer"],
+      "url": "https://www.icpac.net/"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [[21.8, -4.7, 51.4, 22.2]]
+    },
+    "temporal": {
+      "interval": [["2024-10-17T00:00:00Z", null]]
+    }
+  },
+  "license": "proprietary",
+  "links": [
+    {
+      "rel": "root",
+      "href": "http://localhost:8081/",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "http://localhost:8081/collections/flood-hazard-maps",
+      "type": "application/json"
+    }
+  ]
+}

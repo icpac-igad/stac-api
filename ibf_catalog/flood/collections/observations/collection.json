@@ -1,101 +1,66 @@
 {
+  "stac_version": "1.0.0",
   "type": "Collection",
-  "id": "observations",
-  "stac_version": "1.1.0",
-  "description": "Observational data for flood forecasting",
-  "links": [
+  "id": "flood-monitoring-points",
+  "title": "IGAD Flood Monitoring Points",
+  "description": "Network of flood monitoring sections/points across the IGAD region. Each point represents a river section or monitoring location with flood thresholds and metadata for early warning systems.",
+  "keywords": [
+    "flood monitoring",
+    "river sections",
+    "early warning",
+    "hydrological monitoring",
+    "flood thresholds",
+    "IGAD",
+    "disaster preparedness"
+  ],
+  "license": "proprietary",
+  "providers": [
     {
-      "rel": "self",
-      "href": "collection.json",
-      "type": "application/json"
-    },
-    {
-      "rel": "parent",
-      "href": "../../fl_catalog.json",
-      "type": "application/json",
-      "title": "Flood Impact-Based Forecasting Catalog"
-    },
-    {
-      "rel": "root",
-      "href": "../../fl_catalog.json",
-      "type": "application/json",
-      "title": "Flood Impact-Based Forecasting Catalog"
-    },
-    {
-      "rel": "child",
-      "href": "subcollections/imerg/collection.json",
-      "type": "application/json",
-      "title": "Observations Imerg"
-    },
-    {
-      "rel": "child",
-      "href": "subcollections/sentinel1/collection.json",
-      "type": "application/json",
-      "title": "Observations Sentinel1"
-    },
-    {
-      "rel": "child",
-      "href": "flood-points-collection.json",
-      "type": "application/json",
-      "title": "Flood Points"
-    },
-    {
-      "rel": "item",
-      "href": "flood-points-item.json",
-      "type": "application/json",
-      "title": "Flood Points Data"
+      "name": "IGAD Climate Prediction and Applications Centre (ICPAC)",
+      "roles": ["producer"],
+      "url": "https://www.icpac.net"
     }
   ],
-  "title": "Observations",
   "extent": {
     "spatial": {
       "bbox": [
-        [
-          32.0,
-          -12.0,
-          51.0,
-          6.0
-        ]
+        [22.466099, -14.133585, 50.920653, 22.759505]
       ]
     },
     "temporal": {
       "interval": [
-        [
-          "2013-01-01T00:00:00Z",
-          "2025-05-06T10:53:26.860288Z"
-        ]
+        ["2025-07-18T00:00:00Z", null]
       ]
     }
   },
-  "license": "proprietary",
-  "providers": [
+  "item_assets": {
+    "monitoring_points": {
+      "type": "application/vnd.esri.shapefile",
+      "roles": ["data"],
+      "title": "Flood Monitoring Points Shapefile",
+      "description": "Point locations of flood monitoring sections with attributes"
+    }
+  },
+  "summaries": {
+    "datetime": ["2025-07-18T00:00:00Z/.."],
+    "feature_count": [1063],
+    "geometry_type": ["Point"]
+  },
+  "links": [
     {
-      "name": "E4DRR",
-      "description": "Engineering for Disaster Risk Reduction",
-      "roles": [
-        "producer",
-        "licensor"
-      ],
-      "url": "https://e4drr.org"
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json"
     },
     {
-      "name": "ICPAC",
-      "description": "IGAD Climate Prediction and Applications Centre",
-      "roles": [
-        "host",
-        "processor"
-      ],
-      "url": "https://www.icpac.net"
+      "rel": "self",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "items",
+      "href": "./items",
+      "type": "application/json"
     }
-  ],
-  "assets": {
-    "preview": {
-      "href": "/images/fl_obs.png",
-      "type": "image/png",
-      "title": "Preview",
-      "roles": [
-        "thumbnail"
-      ]
-    }
-  }
+  ]
 }

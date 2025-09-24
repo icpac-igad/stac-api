@@ -1,0 +1,68 @@
+{
+  "type": "Collection",
+  "id": "admin-boundaries",
+  "title": "IGAD Administrative Boundaries",
+  "description": "Administrative boundaries (Admin1, Admin2) and geographic features for the IGAD region",
+  "stac_version": "1.0.0",
+  "keywords": [
+    "boundaries",
+    "administrative",
+    "IGAD",
+    "East Africa",
+    "vector",
+    "reference"
+  ],
+  "providers": [
+    {
+      "name": "IGAD-ICPAC",
+      "description": "IGAD Climate Prediction and Applications Centre",
+      "roles": ["producer"],
+      "url": "https://www.icpac.net/"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [21.8, -4.7, 51.4, 22.2]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        ["2024-01-01T00:00:00Z", null]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "stac_extensions": [],
+  "summaries": {
+    "datetime": {
+      "minimum": "2024-01-01T00:00:00Z",
+      "maximum": "2024-12-31T23:59:59Z"
+    }
+  },
+  "item_assets": {
+    "boundaries": {
+      "type": "application/geo+json",
+      "roles": ["data"],
+      "title": "Administrative Boundaries",
+      "description": "GeoJSON format administrative boundaries"
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "http://localhost:8081/",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "http://localhost:8081/collections/admin-boundaries",
+      "type": "application/json"
+    },
+    {
+      "rel": "items",
+      "href": "http://localhost:8081/collections/admin-boundaries/items",
+      "type": "application/geo+json"
+    }
+  ]
+}

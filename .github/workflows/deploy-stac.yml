@@ -37,8 +37,23 @@ jobs:
         # Always copy flood catalog for flood-focused deployment
         cp -r ibf_catalog/flood/* stac_output/
 
-        # Copy images folder
-        cp -r ibf_catalog/images stac_output/
+        # Copy images folder if it exists
+        if [ -d "ibf_catalog/images" ]; then
+          cp -r ibf_catalog/images stac_output/
+        fi
+
+    - name: Configure CORS headers for GitHub Pages
+      run: |
+        # Create _headers file for Netlify-style CORS (if using Netlify)
+        cat > stac_output/_headers << EOF
+        /*
+          Access-Control-Allow-Origin: *
+          Access-Control-Allow-Methods: GET, OPTIONS
+          Access-Control-Allow-Headers: Content-Type
+        EOF
+
+        # Create .nojekyll to ensure GitHub Pages serves all files
+        touch stac_output/.nojekyll
 
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/flood-main' || startsWith(github.ref, 'refs/heads/flood-')
