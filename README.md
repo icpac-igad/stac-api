@@ -52,23 +52,30 @@ ibf_catalog/
 
 ## Deployment
 
-### Automated GitHub Actions Deployment
+### Automated GitHub Actions Validation
 
-The repository includes automated deployment via GitHub Actions when pushing to:
-- `flood-main` - Primary flood catalog deployment
+The repository includes automated STAC catalog validation via GitHub Actions when pushing to:
+- `flood-main` - Primary flood catalog branch
 - `flood-*` - Any branch starting with "flood-" (e.g., flood-dev, flood-staging)
+
+The workflow validates all STAC collections and generates the correct STAC Browser URLs. No additional deployment is needed as the catalog is accessed directly from the GitHub repository via raw content URLs.
 
 ### Access URLs
 
-After deployment, the catalog is accessible via STAC Browser:
+The catalog is accessible via STAC Browser using GitHub raw content URLs:
 
 ```
-https://radiantearth.github.io/stac-browser/#/external/https://[GITHUB_USERNAME].github.io/stac-api/[BRANCH_NAME]/fl_catalog.json
+https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/[GITHUB_USERNAME]/stac-api/refs/heads/[BRANCH_NAME]/ibf_catalog/flood/fl_catalog.json?.language=en
 ```
 
 Example for flood-main branch:
 ```
-https://radiantearth.github.io/stac-browser/#/external/https://icpac-igad.github.io/stac-api/flood-main/fl_catalog.json
+https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json?.language=en
+```
+
+Direct catalog access:
+```
+https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json
 ```
 
 ## Data Format
@@ -95,12 +102,18 @@ Example item structure:
 
 ### Running the STAC Server Locally
 
+If you encounter CORS issues with the GitHub raw URLs, you can run a local server:
+
 ```bash
 cd ibf_catalog
 python stac_server.py 8000
 ```
 
-Access at: `http://localhost:8000/flood/fl_catalog.json`
+Then access via:
+- **Direct catalog**: `http://localhost:8000/flood/fl_catalog.json`
+- **STAC Browser**: `https://radiantearth.github.io/stac-browser/#/external/http://localhost:8000/flood/fl_catalog.json`
+
+The local server includes proper CORS headers to work with STAC Browser.
 
 ## License
 
