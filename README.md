@@ -1,8 +1,8 @@
-# Flood STAC API - E4DRR Impact-Based Forecasting
+# FloodWatch Catalog - E4DRR Impact-Based Forecasting
 
 ## Overview
 
-This repository contains a STAC (SpatioTemporal Asset Catalog) API implementation for Flood Impact-Based Forecasting data in the IGAD/ICPAC region. The catalog organizes flood-related geospatial data according to the STAC specification v1.1.0.
+This repository contains the **FloodWatch Catalog**, a STAC (SpatioTemporal Asset Catalog) implementation for Flood Impact-Based Forecasting data in the IGAD/ICPAC region. The catalog organizes flood-related geospatial data according to the STAC specification v1.1.0.
 
 ## Catalog Structure
 
@@ -64,41 +64,35 @@ The workflow validates all STAC collections and generates the correct STAC Brows
 
 #### STAC Browser Access (Recommended)
 
-**Flood-Main Branch:**
+**FloodWatch Catalog (Flood-Main Branch):**
 ```
 https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json?.language=en
 ```
 
+**Status**: ✅ Working - Shows "FloodWatch Catalog" title and all 6 collections without errors
+
 **Other Branches:**
 Replace `flood-main` with your branch name in the URL pattern:
-`https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/YOUR-BRANCH-NAME/ibf_catalog/flood/fl_catalog.json?.language=en`
+```
+https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/YOUR-BRANCH-NAME/ibf_catalog/flood/fl_catalog.json?.language=en
+```
 
 #### Direct Catalog Access
 
-**Main Flood Catalog JSON:**
+**FloodWatch Catalog JSON:**
 ```
 https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json
 ```
 
-## Data Format
+**Status**: ✅ Working - Returns valid STAC catalog JSON
 
-Each collection contains:
-- **Collection JSON**: Metadata describing the collection
-- **Item JSON files**: Individual data items with references to actual data files (GeoTIFFs, COGs)
+## Catalog Features
 
-Example item structure:
-```json
-{
-  "type": "Feature",
-  "assets": {
-    "data": {
-      "href": "./data/flood_inundation_20241017.tif",
-      "type": "image/tiff; application=geotiff",
-      "roles": ["data"]
-    }
-  }
-}
-```
+- **FloodWatch Catalog**: Main catalog titled "FloodWatch Catalog" for easy identification
+- **Flood-specific Collections**: Six specialized collections for different flood data types
+- **Parent Collection Structure**: Collections serve as organizational containers without direct items
+- **STAC 1.1.0 Compliant**: Follows latest STAC specification
+- **Error-free STAC Browser**: No 404 errors when browsing collections
 
 ## Local Development
 
