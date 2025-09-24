@@ -1,0 +1,75 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "flood-impact-layers",
+  "title": "IGAD Flood Impact Assessment Layers",
+  "description": "Daily flood impact assessment layers showing potential impacts on built environment and agricultural areas (cropland). These vector layers provide detailed impact analysis for disaster response and recovery planning across the IGAD region.",
+  "keywords": [
+    "flood impacts",
+    "built environment",
+    "cropland",
+    "agriculture",
+    "disaster assessment",
+    "impact analysis",
+    "vector layers",
+    "IGAD",
+    "disaster response"
+  ],
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "IGAD Climate Prediction and Applications Centre (ICPAC)",
+      "roles": ["producer", "processor"],
+      "url": "https://www.icpac.net"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [21.0, -15.0, 52.0, 24.0]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        ["2025-05-19T00:00:00Z", null]
+      ]
+    }
+  },
+  "item_assets": {
+    "built_impacts": {
+      "type": "application/vnd.esri.shapefile",
+      "roles": ["data"],
+      "title": "Built Environment Impact Shapefile",
+      "description": "Polygon features showing flood impacts on built/urban areas"
+    },
+    "cropland_impacts": {
+      "type": "application/vnd.esri.shapefile",
+      "roles": ["data"],
+      "title": "Cropland Impact Shapefile",
+      "description": "Polygon features showing flood impacts on agricultural areas"
+    }
+  },
+  "summaries": {
+    "datetime": ["2025-05-19T00:00:00Z/.."],
+    "impact_types": ["built_environment", "cropland", "agriculture"],
+    "geometry_types": ["Polygon"],
+    "data_format": ["shapefile"]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "items",
+      "href": "./items",
+      "type": "application/json"
+    }
+  ]
+}

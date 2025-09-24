@@ -32,6 +32,18 @@
       "href": "subcollections/sentinel1/collection.json",
       "type": "application/json",
       "title": "Observations Sentinel1"
+    },
+    {
+      "rel": "child",
+      "href": "flood-points-collection.json",
+      "type": "application/json",
+      "title": "Flood Points"
+    },
+    {
+      "rel": "item",
+      "href": "flood-points-item.json",
+      "type": "application/json",
+      "title": "Flood Points Data"
     }
   ],
   "title": "Observations",

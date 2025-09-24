@@ -70,17 +70,31 @@ python stac_server.py [port]
 The catalogs are designed to work with the STAC Browser at:
 https://radiantearth.github.io/stac-browser/
 
+### Automated Deployment with GitHub Actions
+
+This repository includes automated deployment of the Flood STAC catalog to GitHub Pages. When you push to specific branches, the catalog will be automatically deployed and accessible through STAC Browser.
+
+#### Supported Branches:
+- `main` - Main production deployment
+- `flood-main` - Primary flood catalog deployment
+- `flood-*` - Any branch starting with "flood-" (e.g., flood-dev, flood-staging)
+
 ### To use with STAC Browser:
-1. Deploy the catalog to a publicly accessible location (e.g., GitHub raw content)
-2. Use the URL pattern: `https://radiantearth.github.io/stac-browser/#/external/[YOUR_RAW_GITHUB_URL]/catalog_v5/drought/dr_catalog.json`
 
-Example URL structure (like the reference provided):
+#### Via GitHub Pages (Automated Deployment):
+After pushing to a supported branch, your catalog will be available at:
 ```
-https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/main/ibf_catalog/drought/dr_catalog.json?.language=en
+https://radiantearth.github.io/stac-browser/#/external/https://[GITHUB_USERNAME].github.io/stac-api/[BRANCH_NAME]/fl_catalog.json
+```
 
+#### Via Raw GitHub Content (Direct Access):
+```
 https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/main/ibf_catalog/flood/fl_catalog.json?.language=en
-
 ```
+
+### Example Flood Catalog URLs:
+- **Main Branch**: https://radiantearth.github.io/stac-browser/#/external/https://icpac-igad.github.io/stac-api/main/fl_catalog.json
+- **Flood-Main Branch**: https://radiantearth.github.io/stac-browser/#/external/https://icpac-igad.github.io/stac-api/flood-main/fl_catalog.json
 
 ## External Data Integration
 

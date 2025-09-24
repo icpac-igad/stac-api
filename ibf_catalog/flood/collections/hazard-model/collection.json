@@ -32,6 +32,18 @@
       "href": "subcollections/geosfm-input/collection.json",
       "type": "application/json",
       "title": "Hazard Model Geosfm Input"
+    },
+    {
+      "rel": "child",
+      "href": "flood-inundation-collection.json",
+      "type": "application/json",
+      "title": "Flood Inundation Maps"
+    },
+    {
+      "rel": "item",
+      "href": "flood-inundation-item-20241017.json",
+      "type": "application/json",
+      "title": "Flood Inundation - 2024-10-17"
     }
   ],
   "title": "Hazard Model",

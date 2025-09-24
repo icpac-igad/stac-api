@@ -1,0 +1,61 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Feature",
+  "id": "merged-alerts-20241020",
+  "collection": "merged-alerts-daily-hmc",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [21.7416786, -15.0082355],
+        [51.4416785, -15.0082355],
+        [51.4416785, 23.3667644],
+        [21.7416786, 23.3667644],
+        [21.7416786, -15.0082355]
+      ]
+    ]
+  },
+  "bbox": [21.7416786, -15.0082355, 51.4416785, 23.3667644],
+  "properties": {
+    "datetime": "2024-10-20T00:00:00Z",
+    "created": "2025-09-24T00:00:00Z",
+    "updated": "2025-09-24T00:00:00Z",
+    "platform": "model",
+    "instruments": ["hydrological-model", "monitoring-stations"],
+    "alert_levels": [1, 2, 3, 4],
+    "data_sources": ["deterministic_forecasts", "hmc_monitoring"],
+    "merged_source": "daily_hmc",
+    "alert_count": {
+      "level_1": 125,
+      "level_2": 87,
+      "level_3": 32,
+      "level_4": 8
+    }
+  },
+  "assets": {
+    "merged_alerts": {
+      "href": "./data/merged_alerts/daily/hmc_alert_daily_20241020.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": ["data"],
+      "title": "Merged Alerts Raster",
+      "description": "Daily merged flood alerts raster for October 20, 2024 from HMC"
+    }
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "./merged-alerts-collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./merged-alerts-item-20250924.json",
+      "type": "application/json"
+    }
+  ]
+}

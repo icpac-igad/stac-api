@@ -1,0 +1,61 @@
+name: Deploy Flood STAC Catalog
+
+on:
+  push:
+    branches:
+      - main
+      - flood-main
+      - 'flood-*'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pystac pystac-client Flask flask-cors
+
+    - name: Copy catalog files for deployment
+      run: |
+        # Create output directory structure
+        mkdir -p stac_output
+
+        # Always copy flood catalog for flood-focused deployment
+        cp -r ibf_catalog/flood/* stac_output/
+
+        # Copy images folder
+        cp -r ibf_catalog/images stac_output/
+
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/flood-main' || startsWith(github.ref, 'refs/heads/flood-')
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./stac_output
+        destination_dir: ${{ github.ref_name }}
+        keep_files: false
+
+    - name: Update deployment URLs
+      if: success() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/flood-main' || startsWith(github.ref, 'refs/heads/flood-'))
+      run: |
+        echo "## Deployment URLs" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### STAC Browser URLs:" >> $GITHUB_STEP_SUMMARY
+        echo "- Flood Impact-Based Forecasting Catalog: https://radiantearth.github.io/stac-browser/#/external/https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Direct Catalog URLs:" >> $GITHUB_STEP_SUMMARY
+        echo "- Flood Catalog JSON: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY

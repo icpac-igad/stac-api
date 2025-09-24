@@ -32,6 +32,18 @@
       "href": "subcollections/impact-flood/collection.json",
       "type": "application/json",
       "title": "Impact Model Impact Flood"
+    },
+    {
+      "rel": "child",
+      "href": "flood-impact-layers-collection.json",
+      "type": "application/json",
+      "title": "Flood Impact Layers"
+    },
+    {
+      "rel": "item",
+      "href": "flood-impact-item-20250519.json",
+      "type": "application/json",
+      "title": "Flood Impact - 2025-05-19"
     }
   ],
   "title": "Impact Model",
