@@ -62,18 +62,20 @@ The workflow validates all STAC collections and generates the correct STAC Brows
 
 ### Access URLs
 
-The catalog is accessible via STAC Browser using GitHub raw content URLs:
+#### STAC Browser Access (Recommended)
 
-```
-https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/[GITHUB_USERNAME]/stac-api/refs/heads/[BRANCH_NAME]/ibf_catalog/flood/fl_catalog.json?.language=en
-```
-
-Example for flood-main branch:
+**Flood-Main Branch:**
 ```
 https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json?.language=en
 ```
 
-Direct catalog access:
+**Other Branches:**
+Replace `flood-main` with your branch name in the URL pattern:
+`https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/YOUR-BRANCH-NAME/ibf_catalog/flood/fl_catalog.json?.language=en`
+
+#### Direct Catalog Access
+
+**Main Flood Catalog JSON:**
 ```
 https://raw.githubusercontent.com/icpac-igad/stac-api/refs/heads/flood-main/ibf_catalog/flood/fl_catalog.json
 ```
