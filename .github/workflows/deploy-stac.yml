@@ -1,4 +1,4 @@
-name: Deploy Flood STAC Catalog
+name: Validate Flood STAC Catalog
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,50 +27,48 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pystac pystac-client Flask flask-cors
+        pip install pystac pystac-client
 
-    - name: Copy catalog files for deployment
+    - name: Validate STAC Catalogs
       run: |
-        # Create output directory structure
-        mkdir -p stac_output
+        echo "Validating STAC catalogs..."
+        python -c "
+        import pystac
+        import os
 
-        # Always copy flood catalog for flood-focused deployment
-        cp -r ibf_catalog/flood/* stac_output/
+        # Validate flood catalog
+        if os.path.exists('ibf_catalog/flood/fl_catalog.json'):
+            try:
+                catalog = pystac.read_file('ibf_catalog/flood/fl_catalog.json')
+                print(f'✓ Flood catalog is valid: {catalog.id}')
+                print(f'  Title: {catalog.title}')
+                print(f'  Collections: {len(catalog.get_children())}')
+            except Exception as e:
+                print(f'✗ Flood catalog validation failed: {e}')
+                exit(1)
+        else:
+            print('✗ Flood catalog not found')
+            exit(1)
+        "
 
-        # Create ibf_catalog.json as a copy of fl_catalog.json for compatibility
-        cp stac_output/fl_catalog.json stac_output/ibf_catalog.json
-
-        # Copy images folder if it exists
-        if [ -d "ibf_catalog/images" ]; then
-          cp -r ibf_catalog/images stac_output/
-        fi
-
-    - name: Configure for GitHub Pages
+    - name: Generate STAC Browser URLs
+      if: success()
       run: |
-        # Create .nojekyll to ensure GitHub Pages serves all files
-        touch stac_output/.nojekyll
-
-        # GitHub Pages doesn't support custom CORS headers
-        # CORS will need to be handled by the consuming application or a proxy
-
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/flood-main' || startsWith(github.ref, 'refs/heads/flood-')
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./stac_output
-        destination_dir: ${{ github.ref_name }}
-        keep_files: false
-
-    - name: Update deployment URLs
-      if: success() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/flood-main' || startsWith(github.ref, 'refs/heads/flood-'))
-      run: |
-        echo "## Deployment URLs" >> $GITHUB_STEP_SUMMARY
+        echo "## STAC Browser Integration URLs" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### STAC Browser URLs:" >> $GITHUB_STEP_SUMMARY
-        echo "- Flood IBF Catalog (fl_catalog): https://radiantearth.github.io/stac-browser/#/external/https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
-        echo "- Flood IBF Catalog (ibf_catalog): https://radiantearth.github.io/stac-browser/#/external/https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/ibf_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "### Flood Impact-Based Forecasting Catalog" >> $GITHUB_STEP_SUMMARY
+        echo "Use these URLs with the STAC Browser at: https://radiantearth.github.io/stac-browser/" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### Direct Catalog URLs:" >> $GITHUB_STEP_SUMMARY
-        echo "- fl_catalog.json: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
-        echo "- ibf_catalog.json: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/ibf_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "**Main Catalog:**" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
+        echo "https://radiantearth.github.io/stac-browser/#/external/https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/refs/heads/${{ github.ref_name }}/ibf_catalog/flood/fl_catalog.json?.language=en" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Direct Raw GitHub URLs:" >> $GITHUB_STEP_SUMMARY
+        echo "- Flood Catalog: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/refs/heads/${{ github.ref_name }}/ibf_catalog/flood/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "- Collections: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/refs/heads/${{ github.ref_name }}/ibf_catalog/flood/collections/" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Usage Instructions:" >> $GITHUB_STEP_SUMMARY
+        echo "1. Copy the STAC Browser URL above" >> $GITHUB_STEP_SUMMARY
+        echo "2. Paste it directly into your browser" >> $GITHUB_STEP_SUMMARY
+        echo "3. The catalog will load automatically in the STAC Browser interface" >> $GITHUB_STEP_SUMMARY
