@@ -6,6 +6,12 @@
   "description": "STAC Catalog for Flood Impact-Based Forecasting (E4DRR IBF) - IGAD/ICPAC Region",
   "links": [
     {
+      "rel": "root",
+      "href": "fl_catalog.json",
+      "type": "application/json",
+      "title": "FloodWatch Catalog"
+    },
+    {
       "rel": "self",
       "href": "fl_catalog.json",
       "type": "application/json"

@@ -47,8 +47,9 @@
   "links": [
     {
       "rel": "root",
-      "href": "./collection.json",
-      "type": "application/json"
+      "href": "../../fl_catalog.json",
+      "type": "application/json",
+      "title": "FloodWatch Catalog"
     },
     {
       "rel": "self",
