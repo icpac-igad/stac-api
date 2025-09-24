@@ -42,9 +42,18 @@ jobs:
                 catalog = pystac.read_file('ibf_catalog/flood/fl_catalog.json')
                 print(f'✓ Flood catalog is valid: {catalog.id}')
                 print(f'  Title: {catalog.title}')
-                print(f'  Collections: {len(catalog.get_children())}')
+
+                # Get children as list to avoid map object issues
+                children = list(catalog.get_children())
+                print(f'  Collections: {len(children)}')
+
+                for child in children:
+                    print(f'    - {child.id}: {child.title}')
+
             except Exception as e:
                 print(f'✗ Flood catalog validation failed: {e}')
+                import traceback
+                traceback.print_exc()
                 exit(1)
         else:
             print('✗ Flood catalog not found')
