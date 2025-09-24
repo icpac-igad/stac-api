@@ -37,23 +37,21 @@ jobs:
         # Always copy flood catalog for flood-focused deployment
         cp -r ibf_catalog/flood/* stac_output/
 
+        # Create ibf_catalog.json as a copy of fl_catalog.json for compatibility
+        cp stac_output/fl_catalog.json stac_output/ibf_catalog.json
+
         # Copy images folder if it exists
         if [ -d "ibf_catalog/images" ]; then
           cp -r ibf_catalog/images stac_output/
         fi
 
-    - name: Configure CORS headers for GitHub Pages
+    - name: Configure for GitHub Pages
       run: |
-        # Create _headers file for Netlify-style CORS (if using Netlify)
-        cat > stac_output/_headers << EOF
-        /*
-          Access-Control-Allow-Origin: *
-          Access-Control-Allow-Methods: GET, OPTIONS
-          Access-Control-Allow-Headers: Content-Type
-        EOF
-
         # Create .nojekyll to ensure GitHub Pages serves all files
         touch stac_output/.nojekyll
+
+        # GitHub Pages doesn't support custom CORS headers
+        # CORS will need to be handled by the consuming application or a proxy
 
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/flood-main' || startsWith(github.ref, 'refs/heads/flood-')
@@ -70,7 +68,9 @@ jobs:
         echo "## Deployment URLs" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### STAC Browser URLs:" >> $GITHUB_STEP_SUMMARY
-        echo "- Flood Impact-Based Forecasting Catalog: https://radiantearth.github.io/stac-browser/#/external/https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "- Flood IBF Catalog (fl_catalog): https://radiantearth.github.io/stac-browser/#/external/https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "- Flood IBF Catalog (ibf_catalog): https://radiantearth.github.io/stac-browser/#/external/https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/ibf_catalog.json" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Direct Catalog URLs:" >> $GITHUB_STEP_SUMMARY
-        echo "- Flood Catalog JSON: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "- fl_catalog.json: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/fl_catalog.json" >> $GITHUB_STEP_SUMMARY
+        echo "- ibf_catalog.json: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.ref_name }}/ibf_catalog.json" >> $GITHUB_STEP_SUMMARY
