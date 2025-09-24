@@ -1,0 +1,80 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "id": "geosfm-verification-2023Q3",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          32.0,
+          -12.0
+        ],
+        [
+          32.0,
+          6.0
+        ],
+        [
+          51.0,
+          6.0
+        ],
+        [
+          51.0,
+          -12.0
+        ],
+        [
+          32.0,
+          -12.0
+        ]
+      ]
+    ]
+  },
+  "bbox": null,
+  "properties": {
+    "type": "Model Verification",
+    "model": "GeoSFM",
+    "period": "Q3 2023",
+    "metrics": [
+      "NSE",
+      "KGE",
+      "RMSE"
+    ],
+    "datetime": "2023-09-30T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "geosfm-verification-2023Q3.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../..",
+      "type": "application/json",
+      "title": "Forecast Verification Geosfm"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Forecast Verification Geosfm"
+    },
+    {
+      "rel": "root",
+      "href": "../../../../fl_catalog.json",
+      "type": "application/json",
+      "title": "Flood Impact-Based Forecasting Catalog"
+    }
+  ],
+  "assets": {
+    "verification-data": {
+      "href": "gs://example-bucket/verification/geosfm/2023Q3_metrics.zarr",
+      "type": "application/vnd+zarr",
+      "title": "GeoSFM Verification Metrics",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "forecast-verification-geosfm"
+}

@@ -1,0 +1,75 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "id": "sentinel1-20231005",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          32.0,
+          -12.0
+        ],
+        [
+          32.0,
+          6.0
+        ],
+        [
+          51.0,
+          6.0
+        ],
+        [
+          51.0,
+          -12.0
+        ],
+        [
+          32.0,
+          -12.0
+        ]
+      ]
+    ]
+  },
+  "bbox": null,
+  "properties": {
+    "product": "Sentinel-1",
+    "polarization": "VV+VH",
+    "resolution": "10m",
+    "datetime": "2023-10-05T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "sentinel1-20231005.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../..",
+      "type": "application/json",
+      "title": "Observations Sentinel1"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Observations Sentinel1"
+    },
+    {
+      "rel": "root",
+      "href": "../../../../fl_catalog.json",
+      "type": "application/json",
+      "title": "Flood Impact-Based Forecasting Catalog"
+    }
+  ],
+  "assets": {
+    "sentinel1-data": {
+      "href": "gs://example-bucket/sentinel1/2023/10/s1_20231005.tif",
+      "type": "image/tiff; application=geotiff",
+      "title": "Sentinel-1 SAR Data",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "observations-sentinel1"
+}

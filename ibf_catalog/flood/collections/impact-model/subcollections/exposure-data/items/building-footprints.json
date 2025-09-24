@@ -1,0 +1,75 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "id": "building-footprints",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          32.0,
+          -12.0
+        ],
+        [
+          32.0,
+          6.0
+        ],
+        [
+          51.0,
+          6.0
+        ],
+        [
+          51.0,
+          -12.0
+        ],
+        [
+          32.0,
+          -12.0
+        ]
+      ]
+    ]
+  },
+  "bbox": null,
+  "properties": {
+    "type": "Building Footprints",
+    "source": "Overture Maps",
+    "resolution": "high",
+    "datetime": "2023-01-01T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "building-footprints.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../..",
+      "type": "application/json",
+      "title": "Impact Model Exposure Data"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Impact Model Exposure Data"
+    },
+    {
+      "rel": "root",
+      "href": "../../../../fl_catalog.json",
+      "type": "application/json",
+      "title": "Flood Impact-Based Forecasting Catalog"
+    }
+  ],
+  "assets": {
+    "building-data": {
+      "href": "https://overturemaps.org/download/buildings",
+      "type": "application/geo+json",
+      "title": "Building Footprint Data",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "impact-model-exposure-data"
+}

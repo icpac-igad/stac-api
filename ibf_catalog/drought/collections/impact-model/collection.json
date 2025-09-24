@@ -1,0 +1,83 @@
+{
+  "type": "Collection",
+  "id": "impact-model",
+  "stac_version": "1.1.0",
+  "description": "Drought impact modeling data and results",
+  "links": [
+    {
+      "rel": "self",
+      "href": "collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../../dr_catalog.json",
+      "type": "application/json",
+      "title": "Drought Impact-Based Forecasting Catalog"
+    },
+    {
+      "rel": "root",
+      "href": "../../dr_catalog.json",
+      "type": "application/json",
+      "title": "Drought Impact-Based Forecasting Catalog"
+    },
+    {
+      "rel": "child",
+      "href": "subcollections/exposure-data/collection.json",
+      "type": "application/json",
+      "title": "Impact Model Exposure Data"
+    }
+  ],
+  "title": "Impact Model",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          32.0,
+          -12.0,
+          51.0,
+          6.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2013-01-01T00:00:00Z",
+          "2025-05-06T10:53:26.869075Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "E4DRR",
+      "description": "Engineering for Disaster Risk Reduction",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://e4drr.org"
+    },
+    {
+      "name": "ICPAC",
+      "description": "IGAD Climate Prediction and Applications Centre",
+      "roles": [
+        "host",
+        "processor"
+      ],
+      "url": "https://www.icpac.net"
+    }
+  ],
+  "assets": {
+    "preview": {
+      "href": "/images/imp_model.png",
+      "type": "image/png",
+      "title": "Preview",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}

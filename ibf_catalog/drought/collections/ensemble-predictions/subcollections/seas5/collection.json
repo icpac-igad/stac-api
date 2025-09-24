@@ -1,0 +1,88 @@
+{
+  "type": "Collection",
+  "id": "ensemble-predictions-seas5",
+  "stac_version": "1.1.0",
+  "description": "SEAS5 seasonal ensemble predictions",
+  "links": [
+    {
+      "rel": "self",
+      "href": "collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Ensemble Predictions"
+    },
+    {
+      "rel": "root",
+      "href": "../../../dr_catalog.json",
+      "type": "application/json",
+      "title": "Drought Impact-Based Forecasting Catalog"
+    },
+    {
+      "rel": "item",
+      "href": "items/seas5-20231001.json",
+      "type": "application/geo+json"
+    }
+  ],
+  "title": "Ensemble Predictions Seas5",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          32.0,
+          -12.0,
+          51.0,
+          6.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2013-01-01T00:00:00Z",
+          "2025-05-06T10:53:26.869075Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "E4DRR",
+      "description": "Engineering for Disaster Risk Reduction",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://e4drr.org"
+    },
+    {
+      "name": "ICPAC",
+      "description": "IGAD Climate Prediction and Applications Centre",
+      "roles": [
+        "host",
+        "processor"
+      ],
+      "url": "https://www.icpac.net"
+    }
+  ],
+  "keywords": [
+    "forecast",
+    "ensemble",
+    "seasonal",
+    "seas5"
+  ],
+  "assets": {
+    "preview": {
+      "href": "../../images/dr_obs.png",
+      "type": "image/png",
+      "title": "Preview",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}

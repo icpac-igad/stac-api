@@ -1,0 +1,81 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "id": "crop-production",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          32.0,
+          -12.0
+        ],
+        [
+          32.0,
+          6.0
+        ],
+        [
+          51.0,
+          6.0
+        ],
+        [
+          51.0,
+          -12.0
+        ],
+        [
+          32.0,
+          -12.0
+        ]
+      ]
+    ]
+  },
+  "bbox": null,
+  "properties": {
+    "type": "Crop Production",
+    "source": "FAO Statistics",
+    "crops": [
+      "maize",
+      "sorghum",
+      "wheat",
+      "rice",
+      "beans"
+    ],
+    "datetime": "2023-01-01T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "crop-production.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../..",
+      "type": "application/json",
+      "title": "Impact Model Exposure Data"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Impact Model Exposure Data"
+    },
+    {
+      "rel": "root",
+      "href": "../../../../dr_catalog.json",
+      "type": "application/json",
+      "title": "Drought Impact-Based Forecasting Catalog"
+    }
+  ],
+  "assets": {
+    "crop-data": {
+      "href": "gs://example-bucket/agriculture/crop_production_eastafrica.tif",
+      "type": "image/tiff; application=geotiff",
+      "title": "Crop Production Map",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "impact-model-exposure-data"
+}

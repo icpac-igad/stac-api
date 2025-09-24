@@ -1,0 +1,75 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "id": "cpt9-202310",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          32.0,
+          -12.0
+        ],
+        [
+          32.0,
+          6.0
+        ],
+        [
+          51.0,
+          6.0
+        ],
+        [
+          51.0,
+          -12.0
+        ],
+        [
+          32.0,
+          -12.0
+        ]
+      ]
+    ]
+  },
+  "bbox": null,
+  "properties": {
+    "product": "CPT 9 Ensemble",
+    "lead_time": "1-3 months",
+    "ensemble_members": 9,
+    "datetime": "2023-10-01T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "cpt9-202310.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../..",
+      "type": "application/json",
+      "title": "Ensemble Predictions Cpt9"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Ensemble Predictions Cpt9"
+    },
+    {
+      "rel": "root",
+      "href": "../../../../dr_catalog.json",
+      "type": "application/json",
+      "title": "Drought Impact-Based Forecasting Catalog"
+    }
+  ],
+  "assets": {
+    "cpt9-data": {
+      "href": "gs://example-bucket/cpt9/2023/10/cpt9_202310.zarr",
+      "type": "application/vnd+zarr",
+      "title": "CPT 9 Ensemble Forecast Data",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "ensemble-predictions-cpt9"
+}

@@ -1,0 +1,75 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "id": "agriculture-productivity",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          32.0,
+          -12.0
+        ],
+        [
+          32.0,
+          6.0
+        ],
+        [
+          51.0,
+          6.0
+        ],
+        [
+          51.0,
+          -12.0
+        ],
+        [
+          32.0,
+          -12.0
+        ]
+      ]
+    ]
+  },
+  "bbox": null,
+  "properties": {
+    "type": "Agriculture Productivity",
+    "source": "FAO Crop Production Index",
+    "resolution": "1km",
+    "datetime": "2023-01-01T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "agriculture-productivity.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../..",
+      "type": "application/json",
+      "title": "Impact Model Exposure Data"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Impact Model Exposure Data"
+    },
+    {
+      "rel": "root",
+      "href": "../../../../dr_catalog.json",
+      "type": "application/json",
+      "title": "Drought Impact-Based Forecasting Catalog"
+    }
+  ],
+  "assets": {
+    "agriculture-data": {
+      "href": "gs://example-bucket/agriculture/productivity_eastafrica.tif",
+      "type": "image/tiff; application=geotiff",
+      "title": "Agricultural Productivity Data",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "impact-model-exposure-data"
+}
